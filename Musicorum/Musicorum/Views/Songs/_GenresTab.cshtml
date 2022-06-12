@@ -1,0 +1,14 @@
+﻿
+@model IList<GenreModel>
+
+<div class="genres-tab">
+    <div class="songs-title">Жанри</div>
+    <div class="all-genres">
+        @foreach (GenreModel genre in Model)
+        {
+            <a href="@Url.Action("GenrePage", "Songs", new { genreId = genre.Id})" class="genre-item">
+                <div class="genre-title">@genre.Title</div>
+            </a>
+        }
+    </div>
+</div>

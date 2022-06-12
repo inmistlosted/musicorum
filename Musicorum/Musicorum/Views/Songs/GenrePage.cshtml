@@ -1,0 +1,23 @@
+﻿@using Musicorum.Web.Models.Songs;
+
+@model GenrePageModel
+
+@{ 
+    string genrePhoto = "/images/image-analysis.png";
+}
+
+<div class="genre-page">
+    <div class="song-page-image-container">
+        <img src="@genrePhoto">
+        <div class="song-page-title">
+            @Model.Genre.Title
+        </div>
+    </div>
+    <div class="genre-descr-container">
+        <div class="genre-descr">
+            @Html.Raw(Model.Genre.Description)
+        </div>
+    </div>
+    @{ await Html.RenderPartialAsync("_SongsList", Model.SongsOfGenre);}
+
+</div>

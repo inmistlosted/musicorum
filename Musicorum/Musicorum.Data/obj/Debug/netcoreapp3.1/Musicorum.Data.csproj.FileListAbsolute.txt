@@ -1,0 +1,9 @@
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\bin\Debug\netcoreapp3.1\Musicorum.Data.deps.json
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\bin\Debug\netcoreapp3.1\Musicorum.Data.dll
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\obj\Debug\netcoreapp3.1\Musicorum.Data.csprojAssemblyReference.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\obj\Debug\netcoreapp3.1\Musicorum.Data.AssemblyInfoInputs.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\obj\Debug\netcoreapp3.1\Musicorum.Data.AssemblyInfo.cs
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\bin\Debug\netcoreapp3.1\Musicorum.Data.pdb
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\obj\Debug\netcoreapp3.1\Musicorum.Data.csproj.CoreCompileInputs.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\obj\Debug\netcoreapp3.1\Musicorum.Data.dll
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Data\obj\Debug\netcoreapp3.1\Musicorum.Data.pdb

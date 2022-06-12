@@ -1,0 +1,7 @@
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.csprojAssemblyReference.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.AssemblyInfoInputs.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.AssemblyInfo.cs
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.csproj.CoreCompileInputs.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.MvcApplicationPartsAssemblyInfo.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.RazorAssemblyInfo.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum\obj\Debug\netcoreapp3.1\Musicorum.RazorAssemblyInfo.cs

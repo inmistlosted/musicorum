@@ -1,0 +1,60 @@
+﻿@using Musicorum.Web.Models.Admin
+
+@model AdminGenresModel
+
+<div class="admin-songs-container">
+    <div class="admin-add-btn add-genre-btn" data-url="@Url.Action("AddGenre", "Songs")">
+        Додати жанр
+    </div>
+    <div class="admin-songs">
+        <div class="admin-genres-navs">
+            <div class="admin-songs-search">
+                <div class="input-group mb-3 search">
+                    <input type="text" class="form-control admin-genres-search-input" placeholder="Пошук" aria-label="Пошук" aria-describedby="button-addon2" value="@Model.Query">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary admin-genres-search-btn" type="button" id="button-addon2" data-url="@Url.Action("GetGenresList", "Admin", new { page = Model.Page})">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-songs-list">
+            @if (Model.Genres != null && Model.Genres.Any())
+            {
+                <div class="admin-song">
+                    <div class="admin-song-image tit tit-photo">Титульне фото</div>
+                    <div class="admin-song-title tit">Назва</div>
+                    <div class="admin-genres-desc tit">Опис</div>
+                    <div class="tit tit-edit">Редагувати</div>
+                    <div class="tit tit-del">Видалити</div>
+                </div>
+
+                @foreach (GenreModel genre in Model.Genres)
+                {
+                    <div class="admin-song admin-genre">
+                        <div class="admin-song-image">
+                            <img src="@genre.TitlePhoto.ToRenderablePictureString()" />
+                        </div>
+                        <div class="admin-song-title">@genre.Title</div>
+                        <div class="admin-genres-desc">@genre.Description</div>
+                        <div class="admin-genre-edit" data-url="@Url.Action("EditGenre", "Songs", new { genreId = genre.Id})"><i class="fa fa-edit"></i></div>
+                        <div class="admin-genre-delete" data-id="@genre.Id" data-url="@Url.Action("DeleteGenre", "Songs")"><i class="fa fa-remove"></i></div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>
+                    Нічого не знайдено
+                </div>
+            }
+        </div>
+        <div class="admin-songs-pages">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <div class="admin-genres-page @(i == Model.Page ? "active" : string.Empty)" data-url="@Url.Action("GetGenresList", "Admin", new { query = Model.Query, page = i})">@i</div>
+            }
+        </div>
+    </div>
+</div>

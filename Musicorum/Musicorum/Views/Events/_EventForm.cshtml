@@ -1,0 +1,51 @@
+﻿@using Musicorum.Web.Models.News
+
+@model EventFormModel
+
+<input asp-for="EventId" type="hidden" />
+
+<div class="form-group">
+    <label asp-for="@Model.Title"></label>
+    <input asp-for="@Model.Title" class="form-control">
+    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="ImageUrl"></label>
+    <input asp-for="ImageUrl" class="form-control">
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Location"></label>
+    <textarea asp-for="Location" class="form-control" rows="3"></textarea>
+    <span asp-validation-for="Location" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Description"></label>
+    <textarea asp-for="Description" class="form-control" rows="7"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="DateStarts"></label>
+    <input asp-for="DateStarts" class="form-control event-date-start" />
+    <span asp-validation-for="DateStarts" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="DateEnds"></label>
+    <input asp-for="DateEnds" class="form-control event-date-end" />
+    <span asp-validation-for="DateEnds" class="text-danger event-date-end-mess"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Photos"></label>
+    <small>.png та .jpeg формати підходящі</small>
+    <input asp-for="Photos" accept="image/*" class="form-control" multiple>
+    <span asp-validation-for="Photos" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Videos"></label>
+    <small>.wav та .mp4 формати підходящі</small>
+    <input asp-for="Videos" accept="video/*" class="form-control" multiple>
+    <span asp-validation-for="Videos" class="text-danger"></span>
+</div>
+
+@{
+                @await Html.PartialAsync("_ValidationScriptsPartial") }

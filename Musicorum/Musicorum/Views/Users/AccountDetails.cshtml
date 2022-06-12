@@ -1,0 +1,43 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model UserAccountModel
+
+<div class="row">
+    <div class="col-sm-3 well text-center user-page-left-block">
+        <div data-url="@Url.Action("AddSong", "Songs")" class="btn-success add-song-btn">
+            Додати пісню
+        </div>
+        <div class="liked-songs-container">
+            <div class="songs-title margin-0">Лайкнуті пісні</div>
+            <div class="songs-container">
+                @foreach (SongModel song in Model.LikedSongs)
+                {
+                    <div class="song">
+                        <a class="song-title" href="@Url.Action("GetSong", "Songs", new { songId = song.Id })">@song.Title</a>
+                        <audio controls src="~/images/ed-sheeran_perfect.mp3"></audio>
+                        <div class="song-info">
+                            <div class="song-author">@song.AuthorName</div>
+                            <div class="song-like" data-id="@song.Id" data-url="@Url.Action("Like", "Songs")">
+                                <p>@song.LikesCount</p>
+                                <i class="fa fa-heart @(song.IsLiked ? "added" : string.Empty)"></i>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 user-songs-container">
+        <div class="user-songs">
+            <div class="songs-title margin-0">Пісні <span class="user-name">@User.Identity.Name</span></div>
+            @{ await Html.RenderPartialAsync("../Songs/_SongsList", new SongListModel { IsUserPage = true, Songs = Model.UserSongs});}
+        </div>
+    </div>
+    <div class="col-sm-3 well user-page-right-block">
+        <div class="liked-songs-container">
+            <div class="songs-title margin-0">Плейлисти</div>
+            <div class="songs-container">
+            </div>
+        </div>
+    </div>
+</div>

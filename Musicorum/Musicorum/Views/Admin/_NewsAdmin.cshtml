@@ -1,0 +1,90 @@
+﻿@using Musicorum.Web.Models.Admin
+
+@model AdminNewsModel
+
+<div class="admin-songs-container">
+    <div class="admin-add-btn add-news-btn" data-url="@Url.Action("AddNews", "News")">
+        Додати новину
+    </div>
+    <div class="admin-songs">
+        <div class="admin-songs-navs">
+            <div class="admin-songs-sort">
+                <div>Сортування:</div>
+                <select class="admin-news-sort-select">
+                    @if (Model.Sort == 1)
+                    {
+                        <option selected data-url="@Url.Action("GetNewsList", "Admin", new { sort = 1, query = Model.Query, page = Model.Page})">
+                            Спочатку раніше додані
+                        </option>
+                    }
+                    else
+                    {
+                        <option data-url="@Url.Action("GetNewsList", "Admin", new { sort = 1, query = Model.Query, page = Model.Page})">
+                            Спочатку раніше додані
+                        </option>
+                    }
+
+                    @if (Model.Sort == 2)
+                    {
+                        <option selected data-url="@Url.Action("GetNewsList", "Admin", new { sort = 2, query = Model.Query, page = Model.Page})">
+                            Спочатку пізніше додані
+                        </option>
+                    }
+                    else
+                    {
+                        <option data-url="@Url.Action("GetNewsList", "Admin", new { sort = 2, query = Model.Query, page = Model.Page})">
+                            Спочатку пізніше додані
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="admin-songs-search">
+                <div class="input-group mb-3 search">
+                    <input type="text" class="form-control admin-news-search-input" placeholder="Пошук" aria-label="Пошук" aria-describedby="button-addon2" value="@Model.Query">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary admin-news-search-btn" type="button" id="button-addon2" data-url="@Url.Action("GetNewsList", "Admin", new { sort = Model.Sort, page = Model.Page})">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-songs-list">
+            @if (Model.News != null && Model.News.Any())
+            {
+            <div class="admin-song">
+                <div class="admin-song-image tit tit-photo">Титульне фото</div>
+                <div class="admin-song-title tit">Назва</div>
+                <div class="admin-genres-desc tit">Короткий опис</div>
+                <div class="tit tit-edit">Редагувати</div>
+                <div class="tit tit-del">Видалити</div>
+            </div>
+
+                @foreach (NewsModel news in Model.News)
+                {
+                    <div class="admin-song admin-news">
+                        <div class="admin-song-image">
+                            <img src="@news.Photo.ToRenderablePictureString()" />
+                        </div>
+                        <div class="admin-song-title">@news.Title</div>
+                        <div class="admin-genres-desc">@news.ShortDescription</div>
+                        <div class="admin-news-edit" data-url="@Url.Action("EditNews", "News", new { newsId = news.Id})"><i class="fa fa-edit"></i></div>
+                        <div class="admin-news-delete" data-id="@news.Id" data-url="@Url.Action("DeleteNews", "News")"><i class="fa fa-remove"></i></div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>
+                    Нічого не знайдено
+                </div>
+            }
+        </div>
+        <div class="admin-songs-pages">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <div class="admin-news-page @(i == Model.Page ? "active" : string.Empty)" data-url="@Url.Action("GetNewsList", "Admin", new { sort = Model.Sort, query = Model.Query, page = i})">@i</div>
+            }
+        </div>
+    </div>
+</div>

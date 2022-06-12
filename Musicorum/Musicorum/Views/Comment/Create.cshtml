@@ -1,0 +1,25 @@
+﻿@model SongCommentCreateModel
+@{
+    ViewData["Title"] = "Додати коментар";
+}
+
+<div class="create-comment">
+    <h3 class="text-center">@ViewData["Title"]</h3>
+    <div>
+        <div>
+            <form id="addComment" method="post" asp-action="Create" asp-controller="Comment">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CommentText"></label>
+                    <textarea asp-for="CommentText" class="form-control" rows="10" style="resize: none"></textarea>
+                    <span asp-validation-for="CommentText" class="text-danger">Не можливо залишити пустий коментар!</span>
+                </div>
+                <input asp-for="SongId" class="form-control" type="hidden" value="@Model.SongId" />
+                <button type="submit" class="btn btn-primary">Додати</button>
+                <a href='javascript:' class="btn btn-default comment-close">Відмінити</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,7 @@
+﻿@using Musicorum.Web.Models.News
+
+@model NewsPageModel
+
+<div class="all-news-container">
+    @{await Html.RenderPartialAsync("_NewsList", Model);}
+</div>

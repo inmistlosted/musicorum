@@ -1,0 +1,35 @@
+﻿@using Musicorum.Web.Models.News
+
+@model NewsPageModel
+
+@foreach (NewsModel news in Model.News)
+{
+    <a href="@Url.Action("GetNews", "News", new { newsId = news.Id })" class="well news-container">
+        <div class="row news-image-container">
+            <div class="news-image">
+                <img src="/images/image-analysis.png">
+            </div>
+        </div>
+        <div class="row news-title">
+            <div class="col-sm-12">
+                <p>@news.Title</p>
+            </div>
+        </div>
+        <div class="row news-content">
+            <div class="col-sm-12">
+                <p>@Html.Raw(news.ShortDescription)</p>
+            </div>
+        </div>
+        <div class="row news-date">
+            <div class="col-sm-4">
+                <p>Дата публікації: <span>@news.Date.ToString("dd.MM.yyyy")</span></p>
+            </div>
+        </div>
+    </a>
+}
+
+@if (Model.HasMore)
+{
+    <a class="load-more-news" href="javascript:" data-url="@Url.Action("GetMoreNews", "News", new { skip = Model.Skip})">Завантажити ще</a>
+}
+

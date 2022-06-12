@@ -1,0 +1,74 @@
+﻿@model SongModel
+
+@{ 
+    string songPhoto = Model.Photo == null ? "/images/image-analysis.png" : Model.Photo.ToRenderablePictureString();
+}
+
+<div class="song-page-container">
+    <div class="song-page-image-container">
+        <img src="@songPhoto">
+        <div class="song-page-title">
+            @Model.Title
+        </div>
+    </div>
+    <div class="song-page-audio">
+        <audio controls src="~/images/ed-sheeran_perfect.mp3"></audio>
+    </div>
+
+
+    <div class="song-page-main-content">
+        <div class="song-page-menu">
+            <div class="menu-item author active">Автор</div>
+            <div class="menu-item genre">Жанр</div>
+
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <div class="menu-item description">Опис</div>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Chorus))
+            {
+                <div class="menu-item lyrics">Слова пісні</div>
+            }
+
+            <div class="menu-item comments">Коментарі</div>
+        </div>
+        <div class="song-page-content">
+            <div class="content-item author active">@Model.AuthorName</div>
+            <div class="content-item genre">@Model.Genre.Title</div>
+
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <div class="content-item description">@Html.Raw(Model.Description)</div>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Chorus))
+            {
+                <div class="content-item lyrics">@Html.Raw(Model.Chorus)</div>
+            }
+
+            <div class="content-item comments">
+               @{ await Html.RenderPartialAsync("~/Views/Comment/_CommentList.cshtml", Model.Comments); }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="song-page-info">
+        <div class="song-page-like-comms">
+            <div class="song-page-like" data-id="@Model.Id" data-url="@Url.Action("Like", "Songs")">
+                <p>@Model.LikesCount</p>
+                <i class="song-like-btn fa fa-heart @(Model.IsLiked ? "added" : string.Empty)"></i>
+                <div class="tooltipik">Лайк</div>
+            </div>
+            <div class="song-page-comment" data-url="@Url.Action("Create", "Comment", new { songId = Model.Id })">
+                <p>@Model.CommentsCount</p>
+                <i class="fa fa-comment song-comment-btn"></i>
+                <div class="tooltipik">Додати коментар</div>
+            </div>
+        </div>
+        <div class="song-page-date">
+            <p>Дата публікації: <span>@Model.Date.ToString("dd.MM.yyyy")</span></p>
+        </div>
+    </div>
+</div>

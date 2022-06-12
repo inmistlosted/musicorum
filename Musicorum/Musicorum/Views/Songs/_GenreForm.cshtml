@@ -1,0 +1,27 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model GenreFormModel
+
+<input asp-for="GenreId" type="hidden" />
+
+<div class="form-group">
+    <label asp-for="@Model.Title"></label>
+    <input asp-for="@Model.Title" class="form-control"></input>
+    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Photo"></label>
+    <small>.png та .jpeg формати підходящі</small>
+    <input asp-for="Photo" accept="image/*" class="form-control"></input>
+    <span asp-validation-for="Photo" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Description"></label>
+    <textarea asp-for="Description" class="form-control" rows="7"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+
+@{
+    @await Html.PartialAsync("_ValidationScriptsPartial") 
+}

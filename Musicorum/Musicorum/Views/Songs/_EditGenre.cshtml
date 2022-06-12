@@ -1,0 +1,21 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model GenreFormModel
+
+@{ ViewData["Title"] = "Редагувати жанр"; }
+
+<div>
+    <div class="create-song-block">
+        <h2 class="text-center">@ViewData["Title"]</h2>
+        <div>
+            <hr class="footer-line" />
+            <form method="post" enctype="multipart/form-data" asp-action="EditGenre" asp-controller="Songs" class="edit-song-form">
+                @Html.Partial("_GenreForm", Model)
+                <div class="add-song-btns-block">
+                    <button type="submit" class="btn btn-success col-md-offset-0">Змінити</button>
+                    <button formaction='javascript:' class="btn btn-default col-md-offset-0 add-song-close">Відмінити</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

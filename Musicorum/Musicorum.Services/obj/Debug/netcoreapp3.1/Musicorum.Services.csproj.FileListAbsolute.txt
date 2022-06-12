@@ -1,0 +1,12 @@
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\bin\Debug\netcoreapp3.1\Musicorum.Services.deps.json
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\bin\Debug\netcoreapp3.1\Musicorum.Services.dll
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.csprojAssemblyReference.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.AssemblyInfoInputs.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.AssemblyInfo.cs
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\bin\Debug\netcoreapp3.1\Musicorum.Data.dll
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.csproj.CoreCompileInputs.cache
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\bin\Debug\netcoreapp3.1\Musicorum.Services.pdb
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\bin\Debug\netcoreapp3.1\Musicorum.Data.pdb
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.csproj.CopyComplete
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.dll
+D:\4kurs\1semestr\PI\Musicorum\Musicorum\Musicorum.Services\obj\Debug\netcoreapp3.1\Musicorum.Services.pdb

@@ -1,0 +1,13 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model SearchResultModel
+
+<div class="search-result">
+    <div class="search-result-title">
+        Результати пошуку за "@Model.Query"
+    </div>
+    <div class="all-songs-container">
+        @{await Html.RenderPartialAsync("_GenresTab", Model.Genres);}
+        @{await Html.RenderPartialAsync("_SongsList", new SongListModel { Songs = Model.Songs});}
+    </div>
+</div>

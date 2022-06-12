@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CommentModel>
+
+@if (Model != null && Model.Any())
+{
+    <div class="comment-list">
+        @foreach (CommentModel comment in Model)
+        {
+            <div class="comment-item">
+                <div class="comment-author">@comment.UserFullName</div>
+                <div class="comment-text">@comment.Text</div>
+                <div class="comment-date">
+                    <div class="song-page-edit-del">
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <div class="song-page-comment" data-id="@comment.Id" data-url="@Url.Action("DeleteComment", "Comment")">
+                                <i class="fa fa-remove comment-del-btn"></i>
+                                <div class="tooltipik in-list comment-del-tooltip">Видалити</div>
+                            </div>
+                        }
+                    </div>
+                    <p>Дата публікації: <span>@comment.Date.ToString("dd.MM.yyyy")</span></p>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>На разі коментарі відсутні</p>
+}

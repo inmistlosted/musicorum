@@ -1,0 +1,78 @@
+﻿
+@model HomePageModel
+
+@{
+    ViewData["Title"] = "User Home Page";
+}
+
+<div class="row">
+    <div class="col-sm-3 songs">
+        <div class="songs-title">Популярні пісні</div>
+        <div class="songs-container">
+            @foreach (SongModel song in Model.Songs)
+            {
+                <div class="song">
+                    <a class="song-title" href="@Url.Action("GetSong", "Songs", new { songId = song.Id })">@song.Title</a>
+                    <audio controls src="~/images/ed-sheeran_perfect.mp3"></audio>
+                    <div class="song-info">
+                        <div class="song-author">@song.AuthorName</div>
+                        <div class="song-like" data-id="@song.Id" data-url="@Url.Action("Like", "Songs")">
+                            <p>@song.LikesCount</p>
+                            <i class="fa fa-heart @(song.IsLiked ? "added" : string.Empty)"></i>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-sm-7 news">
+
+        @foreach (NewsModel news in Model.News)
+        {
+            string newsPhoto = news.Photo == null ? "/images/image-analysis.png" : news.Photo.ToRenderablePictureString();
+
+            <a href="@Url.Action("GetNews", "News", new { newsId = news.Id })" class="well news-container">
+                <div class="row news-image-container">
+                    <div class="news-image">
+                        <img src="@newsPhoto">
+                    </div>
+                </div>
+                <div class="row news-title">
+                    <div class="col-sm-12">
+                        <p>@news.Title</p>
+                    </div>
+                </div>
+                <div class="row news-content">
+                    <div class="col-sm-12">
+                        <p>@news.ShortDescription</p>
+                    </div>
+                </div>
+                <div class="row news-date">
+                    <div class="col-sm-4">
+                        <p>Дата публікації: <span>@news.Date.ToString("dd.MM.yyyy")</span></p>
+                    </div>
+                </div>
+            </a>
+        }
+
+    </div>
+    <div class="col-sm-2 well events">
+        <div class="songs-title">Події</div>
+        <div class="songs-container">
+            @foreach (EventModel ev in Model.Events)
+            {
+                <a class="event" href="@Url.Action("GetEvent", "Events", new { eventId = ev.Id })">
+                    <div class="event-title">@ev.Title</div>
+                    <div class="event-line"></div>
+                    <div class="event-location">
+                        <i class="fa fa-compass"></i>
+                        @ev.Location
+                    </div>
+                    <div class="event-date">
+                        @ev.DateStarts.ToString("dd.MM.yyyy") - @ev.DateEnds.ToString("dd.MM.yyyy")
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>

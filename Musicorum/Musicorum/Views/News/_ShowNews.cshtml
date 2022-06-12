@@ -1,0 +1,24 @@
+﻿@model NewsModel
+
+<div class="well news-page-container">
+    <div class="row news-image-container">
+        <div class="news-page-image">
+            <img src="/images/image-analysis.png">
+        </div>
+    </div>
+    <div class="row news-page-title">
+        <div class="col-sm-12">
+            <p>@Model.Title</p>
+        </div>
+    </div>
+    <div class="row news-page-content">
+        <div class="col-sm-12">
+            <p>@Html.Raw(Model.Text)</p>
+        </div>
+    </div>
+    <div class="row news-date">
+        <div class="col-sm-4">
+            <p>Дата публікації: <span>@Model.Date.ToString("dd.MM.yyyy")</span></p>
+        </div>
+    </div>
+</div>

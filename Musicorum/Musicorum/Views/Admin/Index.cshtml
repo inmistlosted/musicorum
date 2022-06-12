@@ -1,0 +1,28 @@
+﻿@model AdminModel
+
+<div class="admin-container">
+    <div class="admin-btns">
+        <a href="@Url.Action("Index", "Admin", new { categoryId = 1})" class="@(Model.ChosenCategoryId == 1 ? "active" : string.Empty)">Пісні</a>
+        <a href="@Url.Action("Index", "Admin", new { categoryId = 2})" class="@(Model.ChosenCategoryId == 2 ? "active" : string.Empty)">Жанри</a>
+        <a href="@Url.Action("Index", "Admin", new { categoryId = 3})" class="@(Model.ChosenCategoryId == 3 ? "active" : string.Empty)">Новини</a>
+        <a href="@Url.Action("Index", "Admin", new { categoryId = 4})" class="@(Model.ChosenCategoryId == 4 ? "active" : string.Empty)">Події</a>
+    </div>
+    <div class="admin-content">
+        @switch (Model.ChosenCategoryId)
+        {
+            case 1:
+            default:
+                await Html.RenderPartialAsync("_SongsAdmin", Model.Songs);
+                break;
+            case 2:
+                await Html.RenderPartialAsync("_GenresAdmin", Model.Genres);
+                break;
+            case 3:
+                await Html.RenderPartialAsync("_NewsAdmin", Model.News);
+                break;
+            case 4:
+                await Html.RenderPartialAsync("_EventsAdmin", Model.Events);
+                break;
+        }
+    </div>
+</div>

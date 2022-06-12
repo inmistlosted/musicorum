@@ -1,0 +1,56 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model SongFormModel
+
+<input asp-for="SongId" type="hidden" />
+<input asp-for="IsAdminPage" type="hidden" />
+
+<div class="form-group">
+    <label asp-for="@Model.Title"></label>
+    <input asp-for="@Model.Title" class="form-control"></input>
+    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+</div>
+
+@if (!Model.IsEditPage)
+{
+<div class="form-group">
+    <label asp-for="Song"></label>
+    <small>.mp3 формат підходящий</small>
+    <input asp-for="Song" accept="audio/*" class="form-control"></input>
+    <span asp-validation-for="Song" class="text-danger"></span>
+</div>}
+
+<div class="form-group">
+    <label asp-for="Photo"></label>
+    <small>.png та .jpeg формати підходящі</small>
+    <input asp-for="Photo" accept="image/*" class="form-control"></input>
+    <span asp-validation-for="Photo" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Description"></label>
+    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Chorus"></label>
+    <textarea asp-for="Chorus" class="form-control" rows="5"></textarea>
+    <span asp-validation-for="Chorus" class="text-danger"></span>
+</div>
+
+@if (Model.IsAdminPage)
+{
+<div class="form-group">
+    <label asp-for="Author"></label>
+    <input asp-for="Author" class="form-control"></input>
+    <span asp-validation-for="Author" class="text-danger"></span>
+</div>
+}
+
+<div class="form-group">
+    <label asp-for="GenreId"></label>
+    <select asp-for="GenreId" asp-items="Model.Genres.Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString()})" class="form-control" rows="5"></select>
+    <span asp-validation-for="Chorus" class="text-danger"></span>
+</div>
+
+@{
+                @await Html.PartialAsync("_ValidationScriptsPartial") }

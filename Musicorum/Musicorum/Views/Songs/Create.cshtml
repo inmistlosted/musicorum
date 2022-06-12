@@ -1,0 +1,21 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model SongFormModel
+
+@{ ViewData["Title"] = "Додати пісню"; }
+
+<div>
+    <div class="create-song-block">
+        <h2 class="text-center">@ViewData["Title"]</h2>
+        <div>
+            <hr class="footer-line" />
+            <form method="post" enctype="multipart/form-data" asp-action="AddSong" asp-controller="Songs">
+                @Html.Partial("_SongsForm", Model)
+                <div class="add-song-btns-block">
+                    <button type="submit" class="btn btn-success col-md-offset-0">Додати</button>
+                    <button formaction='javascript:' class="btn btn-default col-md-offset-0 add-song-close">Відмінити</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

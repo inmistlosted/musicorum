@@ -1,0 +1,1258 @@
+﻿*{
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 50px;
+    background: #ffdbd9;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 80vh;
+}
+
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+
+#qrCode {
+    margin: 15px;
+}
+
+.news{
+    margin-top: 20px;
+}
+
+.news-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-image img {
+    max-width: 500px;
+    max-height: 300px;
+}
+
+.news-page-image img {
+    max-width: 700px;
+    max-height: 400px;
+}
+
+.news-content{
+    text-align: justify;
+    color: black;
+}
+
+.news-date {
+    display: flex;
+    justify-content: flex-end;
+    color: lightgoldenrodyellow;
+}
+
+.news-date p{
+    margin-bottom: 0;
+}
+
+.news-container {
+    display: block;
+    cursor: pointer;
+    background: #ff7870;
+}
+
+.body-content .news-page-container {
+    margin-top: 15px;
+    background: #ff7870;
+    padding: 30px;
+}
+
+.news-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: floralwhite;
+    margin-top: 10px;
+}
+
+.news-page-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: floralwhite;
+    margin-top: 30px;
+}
+
+.news-page-content {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.news-page-content p{
+    background: white;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.all-news-container {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.songs{
+    margin-top: 20px;
+    background: white;
+    border-radius: 4px;
+}
+
+.songs-title {
+    text-align: center;
+    margin: 15px 0 30px;
+    font-size: 30px;
+    background: #ff7870;
+    border-radius: 4px;
+    padding: 7px 0;
+    color: floralwhite;
+}
+
+.songs-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.song {
+    margin-bottom: 15px;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.song audio{
+    width: 95%;
+    margin: 5px auto;
+}
+
+.song-title {
+    display: block;
+    font-size: 16px;
+    width: 90%;
+    margin: 5px auto;
+    font-weight: bold;
+    color: #ff7870;
+    cursor: pointer;
+}
+
+.song-title:hover {
+    color: #fc4035;
+    text-decoration: none;
+}
+
+.song-info {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5px auto;
+}
+
+.song-author {
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+}
+
+.song-like {
+    display: flex;
+    height: 23px;
+    justify-content: center;
+}
+
+.song-like i{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.song-like i:hover{
+    color: #ff7870;
+}
+
+.song-like p{
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.song-page-container{
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.song-page-image-container {
+    width: 100%;
+    position: relative;
+}
+
+.song-page-image-container img{
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.song-page-title {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.song-page-audio{
+    width: 80%;
+    margin: 20px 0;
+}
+
+.song-page-audio audio{
+    width: 100%;
+}
+
+.song-page-info{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.song-page-like-comms{
+    display: flex;
+    width: 15%;
+}
+
+.song-page-like{
+    display: flex;
+    height: 30px;
+    width: 50%;
+    justify-content: center;
+    position: relative;
+}
+
+.song-page-like i{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.song-page-like i:hover{
+    color: #ff7870;
+}
+
+.song-page-like p{
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.song-page-comment {
+    display: flex;
+    height: 30px;
+    width: 50%;
+    justify-content: center;
+    position: relative;
+}
+
+.song-page-comment i{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.song-page-comment i:hover {
+    color: #ff7870;
+}
+
+.song-page-like .added{
+    color: #ff7870;
+}
+
+.song-like .added {
+    color: #ff7870;
+}
+
+.song-page-comment p{
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.song-page-main-content{
+    width: 95%;
+    display: flex;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.song-page-comment .tooltipik {
+    display: none;
+    position: absolute;
+    border: 1px solid black;
+    bottom: 30px;
+    left: 15%;
+    background: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.song-page-like .tooltipik {
+    display: none;
+    position: absolute;
+    border: 1px solid black;
+    bottom: 30px;
+    left: 33%;
+    background: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.song-page-menu{
+    width: 35%;
+}
+
+.song-page-content {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: floralwhite;
+    background: #ff7870;
+}
+
+.song-page-menu .menu-item {
+    padding: 5px 10px;
+    border: 1px solid black;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    border-right: none;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.song-page-menu .menu-item:last-child {
+    border-bottom: 1px solid black;
+}
+
+.song-page-menu .menu-item:hover {
+    border-color: #ff7870;
+    color:floralwhite;
+    background: #ff7870;
+}
+
+.song-page-menu .active {
+    border-color: #ff7870;
+    color: floralwhite;
+    background: #ff7870;
+}
+
+.song-page-content .content-item {
+    padding: 10px 20px;
+    display: none;
+}
+
+.song-page-content .content-item.comments {
+    width: 100%;
+    text-align: center;
+}
+
+.song-page-content .active {
+    display: block;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-item {
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-author {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.comment-text {
+    margin-bottom: 13px;
+}
+
+.comment-date {
+    font-size: 13px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-date p{
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+}
+
+.create-comment{
+    width: 1000px;
+}
+
+#addComment span{
+    display: none;
+}
+
+.all-songs-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.genres-tab {
+    width: 22%;
+    background: white;
+    border-radius: 4px;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: fit-content;
+}
+
+.all-genres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.genre-item {
+    margin-bottom: 15px;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.genre-title {
+    text-align: center;
+    padding: 5px;
+}
+
+.genre-item:hover {
+    background: #ff7870;
+    color: floralwhite;
+    border-color: #ff7870;
+    text-decoration: none;
+}
+
+.songs-list{
+    width: 76%;
+}
+
+.song-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    margin-bottom: 15px;
+}
+
+.song-list-item {
+    margin: 30px 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, .75);
+    align-items: center;
+    border-radius: 24px;
+}
+
+.song-list-item .title{
+    display: block;
+    font-size: 22px;
+    width: 90%;
+    margin: 10px auto;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.song-list-item .title:hover{
+    text-decoration: none;
+    color: #ff7870;
+}
+
+
+.song-list-item audio{
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.song-list-item .info{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.song-list-item .info .author{
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+}
+
+.song-page-comment .tooltipik.in-list{
+    left: 1%;
+}
+
+.song-page-like .tooltipik.in-list {
+    left: 25%;
+}
+
+.song-page-comment .tooltipik.in-list.del-left {
+    left: -20px;
+}
+
+.tooltipik.in-list.comment-del-tooltip{
+    left: -10px;
+}
+
+.song-page-like .tooltipik.in-list.edit-left {
+    left: -30px;
+}
+
+
+.genre-page {
+    margin-top: 20px;
+    background: #ff7870;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.genre-descr-container {
+    padding: 20px;
+}
+
+.genre-descr {
+    background: white;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.genre-page .song-list-item{
+    margin: 10px auto;
+}
+
+body .header {
+    background: #a81209;
+    border: none;
+}
+
+.navbar .navbar-header .logo {
+    color: white;
+    font-size: 25px;
+    background: #ff7870;
+}
+
+.navbar-collapse .navbar-nav .menus {
+    color: white;
+}
+
+.navbar .navbar-header .logo:hover {
+    color: black;
+    background: white;
+}
+
+.navbar-collapse .navbar-nav .menus:hover {
+    color: #9d9d9d;
+}
+
+.search {
+    display: flex;
+    width: 400px;
+    margin-top: 7px;
+    margin-left: 60px;
+}
+
+.search-btn{
+    border-radius: 0 4px 4px 0;
+}
+
+.search-btn:hover{
+    color: white;
+    background: #ff7870;
+}
+
+.footer-line {
+    border-top: 1px solid #ff7870;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.footer {
+    background: #a81209;
+}
+
+.load-more-news {
+    display: block;
+    width: 150px;
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    color: black;
+}
+
+.load-more-news:hover{
+    background: #ff7870;
+    color: white;
+    text-decoration: none;
+}
+
+.not-found-message {
+    font-size: 20px;
+    color: black;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.search-result{
+    margin-top: 20px;
+}
+
+.search-result-title {
+    text-align: center;
+    font-size: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.register-line {
+    border-top: 1px solid #ff7870;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.register-btn {
+    width: 50%;
+    margin-left: 25%;
+    background: #ff7870;
+    color: white;
+}
+
+.login-btn {
+    background: #ff7870;
+    color: white;
+}
+
+.login-btn:hover,
+.register-btn:hover{
+    color: white;
+    background: #a81209;
+}
+
+.user-page-left-block {
+    padding: 0;
+    background: #ffdbd9;
+    margin-top: 20px;
+}
+
+.liked-songs-container{
+    background: white;
+    padding: 15px 15px 0;
+    border-radius: 4px;
+}
+
+.margin-0 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.add-song-btn {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.user-songs-container{
+    margin-top: 20px;
+}
+
+.user-songs {
+    padding: 15px 15px 1px;
+    background: white;
+    border-radius: 4px;
+}
+
+.user-songs .songs-list{
+    width: 100%;
+}
+
+.user-songs .song-page-like-comms{
+    width: 25%;
+}
+
+.user-songs .song-list-item{
+    margin: 10px 0;
+}
+
+.user-songs .songs-title{
+    width: 60%;
+    margin: 15px auto 30px;
+}
+
+.user-name {
+    color: #d7fa11;
+    font-weight: bold;
+}
+
+.user-page-right-block {
+    padding: 0;
+    background: #ffdbd9;
+    margin-top: 20px;
+}
+
+.create-song-block {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fancybox-can-pan .fancybox-content, 
+.fancybox-can-swipe .fancybox-content{
+    cursor: unset;
+}
+
+.add-song-btns-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.add-song-btns-block button{
+    width: 25%;
+    margin: 0 10px;
+}
+
+.song-page-edit-del{
+    display: flex;
+    width: 15%;
+}
+
+.admin-container{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-btns{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: fit-content;
+}
+
+.admin-btns a{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+}
+
+.admin-btns a:hover{
+    color: white;
+    background: black;
+    text-decoration: none;
+}
+
+.admin-btns .active{
+    color: white;
+    background: black;
+}
+
+.admin-content{
+    width: 75%;
+}
+
+.admin-song{
+    width: 100%;
+    display: flex;
+}
+
+.admin-song div{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-song-image{
+    width: 100px;
+    height: 80px;
+}
+
+.admin-song-image img{
+    width: 100px;
+    height: 80px;
+}
+
+.admin-song-title {
+    width: 175px;
+}
+
+.admin-song-author{
+    width: 120px;
+}
+
+.admin-song-genre {
+    width: 80px;
+}
+
+.admin-song-count{
+    width: 100px;
+}
+
+.admin-song-delete {
+    width: 80px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-song-delete:hover {
+    background: black;
+    color: white;
+}
+
+.admin-song-edit{
+    width: 100px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-song-edit:hover{
+    background: black;
+    color: white;
+}
+
+.tit-photo{
+    height: unset;
+    min-width: 100px;
+}
+
+.admin-song .tit{
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+.tit-edit{
+    width: 100px;
+}
+
+.tit-del{
+    width: 80px;
+}
+
+.admin-songs-navs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.admin-songs-search .search{
+    width: unset;
+    margin-left: unset;
+}
+
+.admin-songs-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.admin-songs-page{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.admin-songs-page.active{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-songs-page:hover{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-songs {
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.admin-songs-container .add-song-btn {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.admin-songs-container .add-song-btn:hover {
+    background: black;
+    color: white;
+}
+
+.admin-genres-desc{
+    width: 376px;
+}
+
+.admin-genres-navs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.admin-genres-page{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.admin-genres-page.active{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-genres-page:hover{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-genre-edit {
+    width: 100px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-genre-delete {
+    width: 80px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-genre-edit:hover {
+    background: black;
+    color: white;
+}
+
+.admin-genre-delete:hover {
+    background: black;
+    color: white;
+}
+
+.admin-add-btn {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.admin-add-btn:hover{
+    background: black;
+    color: white;
+}
+
+.admin-news-page{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.admin-news-page.active{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-news-page:hover{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-news-edit {
+    width: 100px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-news-delete {
+    width: 80px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-news-edit:hover {
+    background: black;
+    color: white;
+}
+
+.admin-news-delete:hover {
+    background: black;
+    color: white;
+}
+
+.int-rad-cont{
+    display: flex;
+}
+
+.int-rad-cont .int-rad{
+    width: 20px;
+    height: 20px;
+    margin: 0 8px;
+}
+
+.admin-event-date{
+    width: 125px;
+}
+
+.admin-event-page{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.admin-event-page.active{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-event-page:hover{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-event-edit {
+    width: 100px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-event-delete {
+    width: 80px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.admin-event-edit:hover {
+    background: black;
+    color: white;
+}
+
+.admin-event-delete:hover {
+    background: black;
+    color: white;
+}
+
+.events {
+    margin-top: 20px;
+    background: white;
+    border-radius: 4px;
+    padding: 0 15px;
+}
+
+.event {
+    margin-bottom: 15px;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event:hover{
+    text-decoration: none;
+    background: #ff7870;
+    border: 1px solid #ff7870;
+}
+
+.event:hover .event-title{
+    color: white;
+}
+
+.event:hover .event-date{
+    color: white;
+}
+
+.event:hover .event-line{
+    border-top: 1px solid white;
+}
+
+.event-title {
+    display: block;
+    font-size: 16px;
+    width: 90%;
+    margin: 5px auto;
+    font-weight: bold;
+    color: #ff7870;
+    cursor: pointer;
+    text-align: center;
+}
+
+.event-location {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    margin: 4px 5px 10px;
+}
+
+.event-date {
+    margin: 10px 5px;
+    text-align: center;
+    color: #337ab7;
+}
+
+.event-line {
+    border-top: 1px solid #ff7870;
+    width: 60%;
+    margin: 6px auto;
+}
+
+.event-page-main-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 25px auto;
+}
+
+.event-page-location {
+    text-align: left;
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-page-location span {
+    color: #a81209;
+}
+
+.event-page-date {
+    text-align: left;
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-page-date span {
+    color: #a81209;
+}
+
+.event-page-description {
+    background: #ff7870;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+.event-page-media {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.event-page-media-content {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: floralwhite;
+    background: #ff7870;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.event-page-photo{
+    width: 90%;
+    margin: 25px auto;
+    border: 4px solid white;
+    border-radius: 10px;
+}
+
+.event-page-photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.event-page-media-content .content-item{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-caption {
+        display: none;
+    }
+}

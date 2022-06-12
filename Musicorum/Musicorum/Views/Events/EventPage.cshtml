@@ -1,0 +1,68 @@
+﻿@model EventModel
+
+@{
+    string songPhoto = Model.ImageUrl == null ? "/images/image-analysis.png" : Model.ImageUrl;
+}
+
+<div class="song-page-container">
+    <div class="song-page-image-container">
+        <img src="@songPhoto">
+        <div class="song-page-title">
+            @Model.Title
+        </div>
+    </div>
+    <div class="event-page-main-content">
+        <div class="event-page-location">
+            Місце проведення: 
+            <span>
+                <i class="fa fa-compass"></i>
+                @Model.Location
+            </span>
+        </div>
+        <div class="event-page-date">
+            Час проведення: 
+            <span>
+                <i class="fa fa-calendar"></i>
+                @Model.DateStarts.ToString() - @Model.DateEnds.ToString()
+            </span>
+        </div>
+        <div class="event-page-description">@Model.Description</div>
+
+
+        <div class="event-page-media">
+            <div class="song-page-menu">
+                <div class="menu-item author active">Фотографії</div>
+                <div class="menu-item genre">Відео</div>
+            </div>
+            <div class="event-page-media-content">
+
+                <div style="display: none;">
+                @if (Model.Photos != null && Model.Photos.Any())
+                {
+                    <div class="content-item">
+                        @foreach (PhotoModel photo in Model.Photos)
+                        {
+                            <div class="event-page-photo">
+                                <img src="@photo.PhotoAsBytes.ToRenderablePictureString()" />
+                            </div>
+                        }
+                    </div>
+                }</div>
+
+                @if (Model.Videos != null && Model.Videos.Any())
+                {
+                    <div class="content-item">
+                        @foreach (VideoModel video in Model.Videos)
+                        {
+                            <div class="event-page-photo">
+                                <video src="@video.VideoAsBytes.ToString()"></video>
+                            </div>
+                        }
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>

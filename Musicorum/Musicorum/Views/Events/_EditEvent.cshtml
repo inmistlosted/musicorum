@@ -1,0 +1,21 @@
+﻿@using Musicorum.Web.Models.Events
+
+@model EventFormModel
+
+@{ ViewData["Title"] = "Змінити подію"; }
+
+<div>
+    <div class="create-song-block">
+        <h2 class="text-center">@ViewData["Title"]</h2>
+        <div>
+            <hr class="footer-line" />
+            <form method="post" class="edit-event-form" enctype="multipart/form-data" asp-action="EditEvent" asp-controller="Events">
+                @Html.Partial("_EventForm", Model)
+                <div class="add-song-btns-block">
+                    <button type="submit" class="btn btn-success col-md-offset-0">Змінити</button>
+                    <button formaction='javascript:' class="btn btn-default col-md-offset-0 add-song-close">Відмінити</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

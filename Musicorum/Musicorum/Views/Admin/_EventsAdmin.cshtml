@@ -1,0 +1,94 @@
+﻿@using Musicorum.Web.Models.Admin
+
+@model AdminEventsModel
+
+<div class="admin-songs-container">
+    <div class="admin-add-btn add-event-btn" data-url="@Url.Action("AddEvent", "Events")">
+        Додати подію
+    </div>
+    <div class="admin-songs">
+        <div class="admin-songs-navs">
+            <div class="admin-songs-sort">
+                <div>Сортування:</div>
+                <select class="admin-news-sort-select">
+                    @if (Model.Sort == 1)
+                    {
+                        <option selected data-url="@Url.Action("GetEventsList", "Admin", new { sort = 1, query = Model.Query, page = Model.Page})">
+                            Спочатку раніше додані
+                        </option>
+                    }
+                    else
+                    {
+                        <option data-url="@Url.Action("GetEventsList", "Admin", new { sort = 1, query = Model.Query, page = Model.Page})">
+                            Спочатку раніше додані
+                        </option>
+                    }
+
+                    @if (Model.Sort == 2)
+                    {
+                        <option selected data-url="@Url.Action("GetEventsList", "Admin", new { sort = 2, query = Model.Query, page = Model.Page})">
+                            Спочатку пізніше додані
+                        </option>
+                    }
+                    else
+                    {
+                        <option data-url="@Url.Action("GetEventsList", "Admin", new { sort = 2, query = Model.Query, page = Model.Page})">
+                            Спочатку пізніше додані
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="admin-songs-search">
+                <div class="input-group mb-3 search">
+                    <input type="text" class="form-control admin-news-search-input" placeholder="Пошук" aria-label="Пошук" aria-describedby="button-addon2" value="@Model.Query">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary admin-news-search-btn" type="button" id="button-addon2" data-url="@Url.Action("GetEventsList", "Admin", new { sort = Model.Sort, page = Model.Page})">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-songs-list">
+            @if (Model.Events != null && Model.Events.Any())
+            {
+                <div class="admin-song">
+                    <div class="admin-song-image tit tit-photo">Титульне фото</div>
+                    <div class="admin-song-title tit">Назва</div>
+                    <div class="admin-event-date tit">Місце проведення</div>
+                    <div class="admin-event-date tit">Дата початку</div>
+                    <div class="admin-event-date tit">Дата кінця</div>
+                    <div class="tit tit-edit">Редагувати</div>
+                    <div class="tit tit-del">Видалити</div>
+                </div>
+
+                @foreach (EventModel eventt in Model.Events)
+                {
+                    <div class="admin-song admin-event">
+                        <div class="admin-song-image">
+                            <img src="@eventt.ImageUrl" />
+                        </div>
+                        <div class="admin-song-title">@eventt.Title</div>
+                        <div class="admin-event-date">@eventt.Location</div>
+                        <div class="admin-event-date">@eventt.DateStarts</div>
+                        <div class="admin-event-date">@eventt.DateEnds</div>
+                        <div class="admin-event-edit" data-url="@Url.Action("EditEvent", "Events", new { eventId = eventt.Id})"><i class="fa fa-edit"></i></div>
+                        <div class="admin-event-delete" data-id="@eventt.Id" data-url="@Url.Action("DeleteEvent", "Events")"><i class="fa fa-remove"></i></div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>
+                    Нічого не знайдено
+                </div>
+            }
+        </div>
+        <div class="admin-songs-pages">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <div class="admin-event-page @(i == Model.Page ? "active" : string.Empty)" data-url="@Url.Action("GetEventsList", "Admin", new { sort = Model.Sort, query = Model.Query, page = i})">@i</div>
+            }
+        </div>
+    </div>
+</div>

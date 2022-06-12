@@ -1,0 +1,60 @@
+﻿@using Musicorum.Web.Models.Songs
+
+@model SongListModel
+
+<div class="songs-list">
+    @if (Model.Songs != null && Model.Songs.Any())
+    {
+        @foreach (SongModel song in Model.Songs)
+        {
+            string songPhoto = song.Photo == null ? "/images/image-analysis.png" : song.Photo.ToRenderablePictureString();
+
+            <div class="song-background" style="background-image: url('@songPhoto'); background-size: 100% 100%;">
+                <div class="song-list-item">
+                    <a class="title" href="@Url.Action("GetSong", "Songs", new { songId = song.Id })">@song.Title</a>
+                    <audio controls src="~/images/ed-sheeran_perfect.mp3"></audio>
+                    <div class="info">
+
+                        @if (Model.IsUserPage)
+                        {
+                            <div class="song-page-edit-del">
+                                <div class="song-page-like" data-url="@Url.Action("EditSong", "Songs", new { songId = song.Id})">
+                                    <i class="fa fa-edit song-edit-btn"></i>
+                                    <div class="tooltipik in-list edit-left">Редагувати</div>
+                                </div>
+                                <div class="song-page-comment" data-id="@song.Id" data-url="@Url.Action("DeleteSong", "Songs")">
+                                    <i class="fa fa-remove song-delete-btn"></i>
+                                    <div class="tooltipik in-list del-left">Видалити</div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="author">@song.AuthorName</div>
+                        }
+
+                        <div class="song-page-like-comms">
+                            <div class="song-page-like" data-id="@song.Id" data-url="@Url.Action("Like", "Songs")">
+                                <p>@song.LikesCount</p>
+                                <i class="song-like-btn fa fa-heart @(song.IsLiked ? "added" : string.Empty)"></i>
+                                <div class="tooltipik in-list">Лайк</div>
+                            </div>
+                            <div class="song-page-comment" data-url="@Url.Action("Create", "Comment", new { songId = song.Id })">
+                                <p>@song.CommentsCount</p>
+                                <i class="fa fa-comment song-comment-btn"></i>
+                                <div class="tooltipik in-list">Додати коментар</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        string message = "На жаль, пісні не знайдено";
+
+        <p class="not-found-message">@message</p>
+    }
+</div>
+
